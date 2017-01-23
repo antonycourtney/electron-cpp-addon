@@ -2,7 +2,7 @@
 
 This is a minimal repro to demonstrate an issue with building native addons for Electron that use standard C++ headers and libraries.
 
-It's based on the simplest ["hello_world" addon](https://github.com/nodejs/node-addon-examples/tree/master/1_hello_world/nan) from [node-addon-examples](https://github.com/nodejs/node-addon-examples]) with a one-line change to include the C++11 standard include file `<regex>`.
+It's based on the simplest ["hello_world" addon](https://github.com/nodejs/node-addon-examples/tree/master/1_hello_world/nan) from [node-addon-examples](https://github.com/nodejs/node-addon-examples) with a one-line change to include the C++11 standard include file `<regex>`.
 
 # Issue
 
@@ -142,7 +142,7 @@ The corresponding fragment from electron's version of the same file is almost id
 
 ## Workaround
 
-We can get this to compile if we add the following fragment to `binding.gyp` in this addon project:
+We can get this to compile if we add the following fragment to `binding.gyp` in this project:
 
 ```
 "conditions": [
